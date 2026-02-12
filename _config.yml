@@ -1,0 +1,33 @@
+title: Sayak Majumder
+url: https://majumd3r.github.io
+
+author:
+  name: Sayak Majumder
+  email: contact.majumd3r@gmail.com
+  
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: true
+
+minima:
+  date_format: "%b %-d, %Y"
+
+collections:
+  writings:
+    output: true
+    permalink: /scribbles/:path/
+  posts:
+    output: true
+    permalink: /blogs/:path/
+
+number_sections: true
+
+# header_pages:
+# - blogs.md
+
+theme: minima
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag

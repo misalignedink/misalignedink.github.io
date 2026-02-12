@@ -1,0 +1,215 @@
+---
+---
+@import "minima";
+
+/* Cool Global Effects */
+
+/* 1. Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Custom Selection Color */
+::selection {
+  background: #ffdb15; /* A vibrant yellow/gold pop */
+  color: #000;
+}
+
+::-moz-selection {
+  background: #ffdb15;
+  color: #000;
+}
+
+/* 3. Hidden Scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* 4. Page Load Animation */
+/* animate the main content wrapper */
+.page-content, .site-footer {
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0; /* Start hidden */
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 5. Link Hover Effects */
+/* Add a subtle underline animation to links within posts and pages */
+.post-content a, .page-content a:not(.post-link) {
+  text-decoration: none;
+  background-image: linear-gradient(#333, #333);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .3s, color .3s;
+}
+
+.post-content a:hover, .page-content a:not(.post-link):hover {
+  background-size: 100% 2px;
+  color: #111;
+}
+
+/* Disable underline effects on navigation links */
+.page-link, .page-link:hover {
+  background-image: none !important;
+  text-decoration: none !important;
+  background-size: 0 !important;
+}
+
+/* Navbar Icons Customization */
+.site-nav .page-link {
+  color: #555 !important; /* Slightly darker than footer #777 */
+  transition: color 0.3s ease;
+}
+
+.site-nav .page-link:hover {
+  color: #000 !important;
+}
+
+/* 6. Site Title Premium Hover */
+.site-title {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), text-shadow 0.3s ease;
+}
+.site-title:hover {
+  text-decoration: none;
+  transform: scale(1.05) translateY(-1px);
+  text-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Soft, deep shadow for lift */
+}
+
+/* 7. Image Hover Zoom */
+/* Subtle zoom for images in posts */
+.post-content img {
+  transition: transform 0.3s ease;
+  border-radius: 8px; /* Slight rounding for modern feel */
+}
+
+.post-content img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Fix for mobile menu clickability */
+.site-nav {
+  z-index: 1000; /* Ensure nav is above other elements */
+  
+  label[for="nav-trigger"] {
+    z-index: 1001; /* Ensure trigger is clickable */
+    position: relative;
+    cursor: pointer;
+  }
+}
+
+/* Responsive Navigation */
+.link-text {
+  display: inline-block;
+  margin-left: 0.3em;
+}
+
+@media screen and (min-width: 1025px) {
+  .link-text {
+    display: none !important;
+    opacity: 0;
+  }
+}
+
+/* Custom Hamburger Menu Trigger up to 1024px */
+@media screen and (max-width: 1024px) {
+  .site-nav {
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    background-color: #fdfdfd;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    text-align: right;
+  }
+  .site-nav label[for=nav-trigger] {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 36px;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .site-nav .menu-icon {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding-top: 10px;
+    text-align: center;
+  }
+  .site-nav .menu-icon > svg {
+    fill: rgb(66.25, 66.25, 66.25);
+  }
+  .site-nav input ~ .trigger {
+    clear: both;
+    display: none;
+  }
+  .site-nav input:checked ~ .trigger {
+    display: block;
+    padding-bottom: 5px;
+  }
+  .site-nav .page-link {
+    display: block;
+    margin-left: 20px;
+    padding: 5px 10px;
+  }
+  .site-nav .page-link:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+/* Poem Styling */
+.poem-content {
+  text-align: left;
+  max-width: 600px;
+  line-height: 1.25;
+  font-size: 0.95em;
+  // padding: 0 20px;
+  
+  p {
+    text-align: left;
+  }
+}
+
+/* Remove max-width for larger screens to fill space */
+@media screen and (min-width: 1025px) {
+  .poem-content {
+    max-width: none;
+  }
+}
+
+/* Mobile Responsive Poem Styling */
+@media screen and (max-width: 1024px) {
+  .poem-content {
+    max-width: 100%;
+    padding: 0 15px;
+    line-height: 1.4;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .poem-content {
+    padding: 0 10px;
+    line-height: 1.5;
+    font-size: 0.85em;
+  }
+}
