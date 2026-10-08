@@ -26,12 +26,40 @@ footer,
 
 .nav {
   box-shadow: 0 2px 2px -2px $shadow-color;
-  overflow: auto;
+  overflow: hidden;
 
   &-container {
-    margin: 1rem auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: .75rem auto;
     position: relative;
-    text-align: center;
+  }
+
+  &-logo-link {
+    align-items: center;
+    display: inline-flex;
+    line-height: 0;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      opacity: .85;
+    }
+  }
+
+  &-logo {
+    border-radius: 8px;
+    display: block;
+    height: 38px;
+    margin: 0;
+    width: 38px;
+    @include transition(all .2s ease-out);
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+    }
   }
 
   &-title {
@@ -48,22 +76,21 @@ footer,
   }
 
   ul {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
     list-style-type: none;
-    margin: 1rem 0 0;
+    margin: 0;
     padding: 0;
-    text-align: center;
   }
 
   li {
     @include transition(all .2s ease-out);
     color: $default-color;
     display: inline-block;
+    margin: 0;
     opacity: .6;
-    padding: 0 2rem 0 0;
-
-    &:last-child {
-      padding-right: 0;
-    }
+    padding: 0;
 
     &:hover,
     &:focus {
@@ -74,20 +101,6 @@ footer,
   a {
     color: $default-color;
     font-family: $sans-serif;
-  }
-}
-
-@media (min-width: 600px) {
-  .nav {
-    &-container {
-      text-align: left;
-    }
-
-    ul {
-      bottom: 0;
-      position: absolute;
-      right: 0;
-    }
   }
 }
 
