@@ -18,9 +18,9 @@
 
   /* ── Tunables ──────────────────────────────────────────────────────────── */
   const BLOCK         = 6;     // pixel block size in px — smaller = more pixels
-  const HOLD_MS       = 6000;  // ms each image is fully shown before transitioning
-  const SCATTER_MS    = 1600;  // ms spread over which blocks START transitioning
-  const BLOCK_DUR_MS  = 550;   // ms each individual block takes to change colour
+  const HOLD_MS       = 3000;  // ms each image is fully shown before transitioning (reduced from 6000ms)
+  const SCATTER_MS    = 1400;  // ms spread over which blocks START transitioning
+  const BLOCK_DUR_MS  = 500;   // ms each individual block takes to change colour
   const HOVER_RADIUS  = 70;    // px radius of the flashlight glow
   const HOVER_ALPHA   = 0.10;  // max brightness boost under cursor
 
